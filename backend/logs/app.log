@@ -1,0 +1,6 @@
+2026-02-02 11:04:14,074 - ChurnGuardAI - INFO - Successful login for user: admin
+2026-02-02 11:04:14,078 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2665s
+2026-02-02 11:04:14,311 - ChurnGuardAI - WARNING - Failed login attempt for user: admin
+2026-02-02 11:04:14,315 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.2340s
+2026-02-02 11:07:12,626 - ChurnGuardAI - INFO - Path: /test-error Method: GET Status: 418 Duration: 0.0040s
+2026-02-02 11:08:13,048 - ChurnGuardAI - INFO - Path: /test-error Method: GET Status: 418 Duration: 0.0029s

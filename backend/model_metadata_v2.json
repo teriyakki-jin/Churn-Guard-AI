@@ -1,0 +1,29 @@
+{
+  "version": "2.0",
+  "created_at": "2026-02-02T10:18:22.152653",
+  "baseline_metrics": {
+    "accuracy": 0.8026969481902059,
+    "precision": 0.6643835616438356,
+    "recall": 0.5187165775401069,
+    "f1": 0.5825825825825826,
+    "roc_auc": 0.8449262445426129
+  },
+  "ensemble_metrics": {
+    "accuracy": 0.8112136266855926,
+    "precision": 0.6914893617021277,
+    "recall": 0.5213903743315508,
+    "f1": 0.5945121951219512,
+    "roc_auc": 0.8475690407915473
+  },
+  "tuning_results": {
+    "xgb_params": "{'learning_rate': 0.05, 'max_depth': 4, 'n_estimators': 100, 'subsample': 0.8}",
+    "rf_params": "{'max_depth': 6, 'min_samples_split': 2, 'n_estimators': 200}",
+    "gb_params": "{'learning_rate': 0.05, 'max_depth': 3, 'n_estimators': 100}",
+    "xgb_score": "0.8491285989398304",
+    "rf_score": "0.8469757890892652",
+    "gb_score": "0.8480433626746166"
+  },
+  "feature_count": 59,
+  "training_samples": 5634,
+  "test_samples": 1409
+}

@@ -9,7 +9,7 @@ import {
 } from 'recharts';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = '/api';
 
 // Modal Component for Detailed Insights
 const InsightModal = ({ insight, onClose }) => {
@@ -586,10 +586,17 @@ const MainContent = () => {
 
   useEffect(() => {
     const fetchStats = async () => {
+      const token = localStorage.getItem('token');
+      if (!token) return;
+
+      const config = {
+        headers: { Authorization: `Bearer ${token}` }
+      };
+
       try {
         const [resStats, resAnalysis] = await Promise.all([
-          axios.get(`${API_URL}/stats`),
-          axios.get(`${API_URL}/analysis`)
+          axios.get(`${API_URL}/stats`, config),
+          axios.get(`${API_URL}/analysis`, config)
         ]);
         setStats(resStats.data);
         setAnalysis(resAnalysis.data);

@@ -1,5 +1,5 @@
 fastapi
-uvicorn
+uvicorn[standard]
 pandas
 scikit-learn
 xgboost
@@ -8,3 +8,9 @@ scipy
 python-multipart
 python-jose[cryptography]
 passlib[bcrypt]
+python-dotenv
+pytest
+httpx
+psycopg2-binary
+sqlalchemy
+slowapi

@@ -14,9 +14,12 @@ const Login = () => {
         e.preventDefault();
         setIsLoading(true);
         setError('');
-        const success = await login(username, password);
-        if (!success) {
-            setError('Invalid credentials');
+        try {
+            const success = await login(username, password);
+            if (!success) setError('Invalid credentials');
+        } catch (err) {
+            const msg = typeof err === "string" ? err : (err?.message ?? "Invalid credentials");
+            setError(msg);
         }
         setIsLoading(false);
     };
