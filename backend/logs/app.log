@@ -4,3 +4,798 @@
 2026-02-02 11:04:14,315 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.2340s
 2026-02-02 11:07:12,626 - ChurnGuardAI - INFO - Path: /test-error Method: GET Status: 418 Duration: 0.0040s
 2026-02-02 11:08:13,048 - ChurnGuardAI - INFO - Path: /test-error Method: GET Status: 418 Duration: 0.0029s
+2026-02-02 11:14:49,888 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:14:49,890 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2498s
+2026-02-02 11:14:50,380 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 11:14:50,382 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.2425s
+2026-02-02 11:14:50,883 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 11:14:50,884 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2440s
+2026-02-02 11:14:50,896 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0076s
+2026-02-02 11:14:51,424 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0013s
+2026-02-02 11:14:51,436 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:14:52,146 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 11:14:52,147 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2341s
+2026-02-02 11:14:52,382 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 11:14:52,383 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2335s
+2026-02-02 11:14:52,388 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0029s
+2026-02-02 11:14:52,393 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0021s
+2026-02-02 11:14:52,647 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0056s
+2026-02-02 11:14:52,904 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0062s
+2026-02-02 11:14:52,923 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0015s
+2026-02-02 11:14:53,216 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0059s
+2026-02-02 11:14:53,472 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0060s
+2026-02-02 11:14:53,489 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0000s
+2026-02-02 11:14:53,805 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0058s
+2026-02-02 11:14:54,073 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0071s
+2026-02-02 11:14:54,091 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:14:54,352 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0066s
+2026-02-02 11:14:54,614 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0073s
+2026-02-02 11:14:54,873 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0079s
+2026-02-02 11:15:10,301 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0020s
+2026-02-02 11:15:29,127 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0020s
+2026-02-02 11:16:00,573 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:16:00,575 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3032s
+2026-02-02 11:16:01,103 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 11:16:01,105 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.2491s
+2026-02-02 11:16:01,651 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 11:16:01,652 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2500s
+2026-02-02 11:16:01,655 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0009s
+2026-02-02 11:16:02,126 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0019s
+2026-02-02 11:16:02,139 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0016s
+2026-02-02 11:16:02,890 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 11:16:02,891 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2549s
+2026-02-02 11:16:03,134 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 11:16:03,136 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2432s
+2026-02-02 11:16:03,140 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0026s
+2026-02-02 11:16:03,144 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0030s
+2026-02-02 11:16:03,423 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0061s
+2026-02-02 11:16:03,704 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0068s
+2026-02-02 11:16:03,722 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0012s
+2026-02-02 11:16:03,991 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0061s
+2026-02-02 11:16:04,301 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0094s
+2026-02-02 11:16:04,325 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0010s
+2026-02-02 11:16:04,643 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0090s
+2026-02-02 11:16:04,945 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0094s
+2026-02-02 11:16:04,966 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0006s
+2026-02-02 11:16:05,303 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0055s
+2026-02-02 11:16:05,606 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0105s
+2026-02-02 11:16:05,928 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0090s
+2026-02-02 11:16:42,409 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:16:42,411 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2720s
+2026-02-02 11:16:43,024 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 11:16:43,025 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.2993s
+2026-02-02 11:16:43,569 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 11:16:43,571 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2629s
+2026-02-02 11:16:43,575 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0030s
+2026-02-02 11:16:44,177 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0041s
+2026-02-02 11:16:44,190 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:16:44,976 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 11:16:44,977 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2498s
+2026-02-02 11:16:45,252 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 11:16:45,254 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2724s
+2026-02-02 11:16:45,258 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0025s
+2026-02-02 11:16:45,263 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0021s
+2026-02-02 11:16:45,551 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0082s
+2026-02-02 11:16:45,845 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0067s
+2026-02-02 11:16:45,872 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0026s
+2026-02-02 11:16:46,154 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0070s
+2026-02-02 11:16:46,605 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0193s
+2026-02-02 11:16:46,661 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0036s
+2026-02-02 11:16:47,083 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0058s
+2026-02-02 11:16:47,541 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0194s
+2026-02-02 11:16:47,582 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 11:16:47,998 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0106s
+2026-02-02 11:16:48,394 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0116s
+2026-02-02 11:16:48,789 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0124s
+2026-02-02 11:17:08,703 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:08,705 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2630s
+2026-02-02 11:17:08,711 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:17:08,712 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0043s
+2026-02-02 11:17:09,766 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:09,768 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2671s
+2026-02-02 11:17:09,772 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:17:09,774 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0045s
+2026-02-02 11:17:09,793 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0014s
+2026-02-02 11:17:10,309 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:10,311 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2519s
+2026-02-02 11:17:10,325 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0121s
+2026-02-02 11:17:10,820 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:10,821 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2440s
+2026-02-02 11:17:10,826 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0027s
+2026-02-02 11:17:10,841 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0009s
+2026-02-02 11:17:11,353 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:11,354 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2654s
+2026-02-02 11:17:11,360 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0033s
+2026-02-02 11:17:11,658 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0062s
+2026-02-02 11:17:11,932 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 429 Duration: 0.0066s
+2026-02-02 11:17:46,467 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:46,469 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2746s
+2026-02-02 11:17:47,033 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 11:17:47,035 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.2618s
+2026-02-02 11:17:47,531 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 11:17:47,533 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2428s
+2026-02-02 11:17:47,537 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0020s
+2026-02-02 11:17:48,050 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0022s
+2026-02-02 11:17:48,062 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:17:48,825 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 11:17:48,828 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2464s
+2026-02-02 11:17:49,089 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 11:17:49,092 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2619s
+2026-02-02 11:17:49,097 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0025s
+2026-02-02 11:17:49,101 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0026s
+2026-02-02 11:17:49,624 - ChurnGuardAI - INFO - Successful login for user: edgeuser
+2026-02-02 11:17:49,626 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2560s
+2026-02-02 11:17:49,629 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:17:49,631 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0036s
+2026-02-02 11:17:50,184 - ChurnGuardAI - INFO - Successful login for user: newuser
+2026-02-02 11:17:50,185 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2518s
+2026-02-02 11:17:50,190 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:17:50,191 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0029s
+2026-02-02 11:17:50,210 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0013s
+2026-02-02 11:17:50,737 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:50,738 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2502s
+2026-02-02 11:17:50,743 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:17:50,744 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0030s
+2026-02-02 11:17:51,287 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:51,288 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2717s
+2026-02-02 11:17:51,292 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:17:51,293 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0025s
+2026-02-02 11:17:51,312 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0000s
+2026-02-02 11:17:51,915 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:51,916 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2779s
+2026-02-02 11:17:51,921 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0026s
+2026-02-02 11:17:52,471 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:52,473 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2657s
+2026-02-02 11:17:52,478 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0025s
+2026-02-02 11:17:52,494 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:17:53,039 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:53,041 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2708s
+2026-02-02 11:17:53,045 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0026s
+2026-02-02 11:17:53,587 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:53,588 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2766s
+2026-02-02 11:17:53,593 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:17:53,594 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0035s
+2026-02-02 11:17:54,160 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:17:54,162 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2554s
+2026-02-02 11:17:54,166 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:17:54,167 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0027s
+2026-02-02 11:18:12,770 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:12,771 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2544s
+2026-02-02 11:18:12,776 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:12,778 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0042s
+2026-02-02 11:18:13,805 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:13,806 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2548s
+2026-02-02 11:18:13,811 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:13,812 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0030s
+2026-02-02 11:18:13,829 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0010s
+2026-02-02 11:18:14,329 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:14,331 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2495s
+2026-02-02 11:18:14,335 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0022s
+2026-02-02 11:18:14,851 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:14,853 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2585s
+2026-02-02 11:18:14,858 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0027s
+2026-02-02 11:18:14,874 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:18:15,394 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:15,395 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2696s
+2026-02-02 11:18:15,400 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0031s
+2026-02-02 11:18:15,916 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:15,918 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2613s
+2026-02-02 11:18:15,922 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:15,923 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0030s
+2026-02-02 11:18:16,482 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:16,483 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2912s
+2026-02-02 11:18:16,487 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:16,488 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0025s
+2026-02-02 11:18:43,506 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:43,507 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2797s
+2026-02-02 11:18:44,016 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 11:18:44,017 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.2539s
+2026-02-02 11:18:44,517 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 11:18:44,519 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2425s
+2026-02-02 11:18:44,523 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0027s
+2026-02-02 11:18:45,010 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 11:18:45,024 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 11:18:45,773 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 11:18:45,774 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2362s
+2026-02-02 11:18:46,019 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 11:18:46,021 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2447s
+2026-02-02 11:18:46,025 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0021s
+2026-02-02 11:18:46,029 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0025s
+2026-02-02 11:18:46,599 - ChurnGuardAI - INFO - Successful login for user: edgeuser
+2026-02-02 11:18:46,600 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2793s
+2026-02-02 11:18:46,606 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:46,607 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0040s
+2026-02-02 11:18:47,148 - ChurnGuardAI - INFO - Successful login for user: newuser
+2026-02-02 11:18:47,150 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2558s
+2026-02-02 11:18:47,153 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:47,155 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0039s
+2026-02-02 11:18:47,174 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0010s
+2026-02-02 11:18:47,726 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:47,727 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2508s
+2026-02-02 11:18:47,732 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:47,733 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0029s
+2026-02-02 11:18:48,301 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:48,303 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2691s
+2026-02-02 11:18:48,305 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:48,307 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0025s
+2026-02-02 11:18:48,325 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0010s
+2026-02-02 11:18:48,866 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:48,868 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2769s
+2026-02-02 11:18:48,875 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0040s
+2026-02-02 11:18:49,454 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:49,456 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2659s
+2026-02-02 11:18:49,460 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0020s
+2026-02-02 11:18:49,479 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:18:50,023 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:50,025 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2603s
+2026-02-02 11:18:50,030 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0026s
+2026-02-02 11:18:50,578 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:50,580 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2656s
+2026-02-02 11:18:50,583 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:50,585 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0028s
+2026-02-02 11:18:51,117 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:18:51,118 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2510s
+2026-02-02 11:18:51,122 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:18:51,124 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0037s
+2026-02-02 11:19:07,449 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:19:07,451 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2524s
+2026-02-02 11:19:07,455 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:19:07,457 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0040s
+2026-02-02 11:19:08,557 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:19:08,558 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2767s
+2026-02-02 11:19:08,563 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:19:08,564 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0036s
+2026-02-02 11:19:08,584 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0000s
+2026-02-02 11:19:09,096 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:19:09,097 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2596s
+2026-02-02 11:19:09,102 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0028s
+2026-02-02 11:19:09,627 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:19:09,628 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2620s
+2026-02-02 11:19:09,632 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0020s
+2026-02-02 11:19:09,653 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 11:19:10,253 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:19:10,254 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2547s
+2026-02-02 11:19:10,259 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0025s
+2026-02-02 11:19:10,799 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:19:10,801 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2604s
+2026-02-02 11:19:10,804 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:19:10,805 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0020s
+2026-02-02 11:19:11,374 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:19:11,376 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2719s
+2026-02-02 11:19:11,380 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:19:11,382 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0040s
+2026-02-02 11:20:49,898 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:20:49,901 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3190s
+2026-02-02 11:20:49,908 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:20:49,910 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0066s
+2026-02-02 11:20:51,140 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:20:51,142 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2972s
+2026-02-02 11:20:51,147 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:20:51,148 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0030s
+2026-02-02 11:20:51,167 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0011s
+2026-02-02 11:20:51,729 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:20:51,730 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2872s
+2026-02-02 11:20:51,740 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0068s
+2026-02-02 11:20:52,368 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:20:52,369 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2874s
+2026-02-02 11:20:52,373 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0026s
+2026-02-02 11:20:52,397 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:20:52,952 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:20:52,953 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2713s
+2026-02-02 11:20:52,958 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0020s
+2026-02-02 11:20:53,571 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:20:53,572 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3000s
+2026-02-02 11:20:53,576 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:20:53,577 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0035s
+2026-02-02 11:20:54,155 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:20:54,156 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2874s
+2026-02-02 11:20:54,161 - ChurnGuardAI - ERROR - Prediction error: Model not loaded
+2026-02-02 11:20:54,162 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0027s
+2026-02-02 11:21:27,747 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:27,749 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3333s
+2026-02-02 11:21:28,308 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 11:21:28,309 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.2834s
+2026-02-02 11:21:28,907 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 11:21:28,908 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2874s
+2026-02-02 11:21:28,914 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0037s
+2026-02-02 11:21:29,581 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0032s
+2026-02-02 11:21:29,594 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 11:21:30,497 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 11:21:30,498 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3121s
+2026-02-02 11:21:30,779 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 11:21:30,780 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2806s
+2026-02-02 11:21:30,784 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0021s
+2026-02-02 11:21:30,788 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0021s
+2026-02-02 11:21:31,423 - ChurnGuardAI - INFO - Successful login for user: edgeuser
+2026-02-02 11:21:31,423 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3249s
+2026-02-02 11:21:31,455 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:21:31,457 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0298s
+2026-02-02 11:21:32,136 - ChurnGuardAI - INFO - Successful login for user: newuser
+2026-02-02 11:21:32,137 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3602s
+2026-02-02 11:21:32,147 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:21:32,147 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0074s
+2026-02-02 11:21:32,178 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0030s
+2026-02-02 11:21:32,750 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:32,751 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2838s
+2026-02-02 11:21:32,761 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:21:32,762 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0080s
+2026-02-02 11:21:33,391 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:33,393 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3071s
+2026-02-02 11:21:33,400 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:21:33,402 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0078s
+2026-02-02 11:21:33,423 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0015s
+2026-02-02 11:21:34,006 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:34,008 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3096s
+2026-02-02 11:21:34,013 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0027s
+2026-02-02 11:21:34,599 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:34,601 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2940s
+2026-02-02 11:21:34,610 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0055s
+2026-02-02 11:21:34,629 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:21:35,233 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:35,234 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2838s
+2026-02-02 11:21:35,239 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0030s
+2026-02-02 11:21:35,865 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:35,866 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2841s
+2026-02-02 11:21:35,874 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:21:35,876 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0071s
+2026-02-02 11:21:36,506 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:36,507 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3121s
+2026-02-02 11:21:36,521 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:21:36,521 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0104s
+2026-02-02 11:21:56,196 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:56,196 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3067s
+2026-02-02 11:21:56,208 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:21:56,210 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0098s
+2026-02-02 11:21:57,730 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:57,732 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2883s
+2026-02-02 11:21:57,746 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:21:57,747 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0120s
+2026-02-02 11:21:57,782 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0020s
+2026-02-02 11:21:58,583 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:58,585 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3805s
+2026-02-02 11:21:58,595 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0055s
+2026-02-02 11:21:59,256 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:59,258 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2971s
+2026-02-02 11:21:59,265 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0035s
+2026-02-02 11:21:59,287 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 11:21:59,871 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:21:59,873 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2932s
+2026-02-02 11:21:59,878 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0020s
+2026-02-02 11:22:00,495 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:22:00,496 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2971s
+2026-02-02 11:22:00,505 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:22:00,506 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0086s
+2026-02-02 11:22:01,134 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:22:01,135 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3139s
+2026-02-02 11:22:01,146 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:22:01,149 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0110s
+2026-02-02 11:28:17,597 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:28:17,598 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2939s
+2026-02-02 11:28:18,090 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 11:28:18,092 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.2417s
+2026-02-02 11:28:18,595 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 11:28:18,597 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2487s
+2026-02-02 11:28:18,601 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0038s
+2026-02-02 11:28:19,148 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 11:28:19,162 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0011s
+2026-02-02 11:28:19,878 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 11:28:19,879 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2346s
+2026-02-02 11:28:20,136 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 11:28:20,137 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2551s
+2026-02-02 11:28:20,142 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0020s
+2026-02-02 11:28:20,146 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0021s
+2026-02-02 11:28:20,653 - ChurnGuardAI - INFO - Successful login for user: edgeuser
+2026-02-02 11:28:20,655 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2457s
+2026-02-02 11:28:20,663 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:28:20,663 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0062s
+2026-02-02 11:28:21,173 - ChurnGuardAI - INFO - Successful login for user: newuser
+2026-02-02 11:28:21,174 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2510s
+2026-02-02 11:28:21,182 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:28:21,182 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0059s
+2026-02-02 11:28:21,200 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0010s
+2026-02-02 11:28:21,712 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:28:21,712 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2513s
+2026-02-02 11:28:21,721 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:28:21,722 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0076s
+2026-02-02 11:28:22,234 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:28:22,235 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2609s
+2026-02-02 11:28:22,243 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:28:22,245 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0071s
+2026-02-02 11:28:22,263 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0015s
+2026-02-02 11:28:22,832 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:28:22,833 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2469s
+2026-02-02 11:28:22,838 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0030s
+2026-02-02 11:28:23,394 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:28:23,395 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3007s
+2026-02-02 11:28:23,399 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0020s
+2026-02-02 11:28:23,418 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0007s
+2026-02-02 11:28:23,963 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:28:23,965 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2665s
+2026-02-02 11:28:23,969 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0030s
+2026-02-02 11:28:24,516 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:28:24,517 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2670s
+2026-02-02 11:28:24,524 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:28:24,526 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0071s
+2026-02-02 11:28:25,062 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:28:25,064 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2709s
+2026-02-02 11:28:25,073 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:28:25,075 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0079s
+2026-02-02 11:29:37,296 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:29:37,296 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3165s
+2026-02-02 11:29:37,306 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:29:37,308 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0073s
+2026-02-02 11:29:38,614 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:29:38,615 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2754s
+2026-02-02 11:29:38,630 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:29:38,632 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0115s
+2026-02-02 11:29:38,662 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0011s
+2026-02-02 11:29:39,275 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:29:39,276 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2895s
+2026-02-02 11:29:39,282 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0037s
+2026-02-02 11:29:39,917 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:29:39,918 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3142s
+2026-02-02 11:29:39,923 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0021s
+2026-02-02 11:29:39,943 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 11:29:40,576 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:29:40,578 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3130s
+2026-02-02 11:29:40,586 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0040s
+2026-02-02 11:29:41,197 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:29:41,200 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3088s
+2026-02-02 11:29:41,213 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:29:41,214 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0112s
+2026-02-02 11:29:41,786 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:29:41,787 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2678s
+2026-02-02 11:29:41,797 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:29:41,806 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0154s
+2026-02-02 11:30:37,859 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:30:37,860 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2718s
+2026-02-02 11:30:37,869 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:30:37,870 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0071s
+2026-02-02 11:30:39,092 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:30:39,094 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3510s
+2026-02-02 11:30:39,103 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:30:39,104 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0085s
+2026-02-02 11:30:39,122 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0000s
+2026-02-02 11:30:39,619 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:30:39,620 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2435s
+2026-02-02 11:30:39,626 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0035s
+2026-02-02 11:30:40,122 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:30:40,124 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2470s
+2026-02-02 11:30:40,128 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 500 Duration: 0.0025s
+2026-02-02 11:30:40,146 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 11:30:40,637 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:30:40,638 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2427s
+2026-02-02 11:30:40,643 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 500 Duration: 0.0025s
+2026-02-02 11:30:41,148 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:30:41,149 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2528s
+2026-02-02 11:30:41,159 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:30:41,161 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0099s
+2026-02-02 11:30:41,672 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 11:30:41,675 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2511s
+2026-02-02 11:30:41,682 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 11:30:41,683 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0065s
+2026-02-02 13:08:57,063 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:08:57,065 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4007s
+2026-02-02 13:08:57,083 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 13:08:57,085 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0165s
+2026-02-02 13:17:00,853 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:17:00,860 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2510s
+2026-02-02 13:17:00,870 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 13:17:00,871 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0086s
+2026-02-02 13:20:15,487 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:20:15,488 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3097s
+2026-02-02 13:20:15,498 - ChurnGuardAI - ERROR - Prediction error: [Errno 2] No such file or directory: 'data/Customer-Churn.csv'
+2026-02-02 13:20:15,499 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 400 Duration: 0.0088s
+2026-02-02 13:21:10,147 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:10,148 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2711s
+2026-02-02 13:21:10,720 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 13:21:10,723 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.3044s
+2026-02-02 13:21:11,347 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:11,348 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2952s
+2026-02-02 13:21:11,405 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:21:11,406 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0556s
+2026-02-02 13:21:11,970 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 13:21:11,972 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2648s
+2026-02-02 13:21:12,025 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0517s
+2026-02-02 13:21:12,110 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.0830s
+2026-02-02 13:21:12,170 - ChurnGuardAI - INFO - Churn prediction for user flowuser: No (Score: 0.0906)
+2026-02-02 13:21:12,171 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0589s
+2026-02-02 13:21:12,192 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0020s
+2026-02-02 13:21:12,211 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 13:21:13,063 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 13:21:13,064 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2938s
+2026-02-02 13:21:13,333 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 13:21:13,333 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2665s
+2026-02-02 13:21:13,366 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0309s
+2026-02-02 13:21:13,400 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0315s
+2026-02-02 13:21:13,955 - ChurnGuardAI - INFO - Successful login for user: edgeuser
+2026-02-02 13:21:13,957 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2784s
+2026-02-02 13:21:14,013 - ChurnGuardAI - INFO - Churn prediction for user edgeuser: No (Score: 0.0372)
+2026-02-02 13:21:14,016 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0572s
+2026-02-02 13:21:14,605 - ChurnGuardAI - INFO - Successful login for user: newuser
+2026-02-02 13:21:14,606 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2675s
+2026-02-02 13:21:14,662 - ChurnGuardAI - INFO - Churn prediction for user newuser: Yes (Score: 0.6079)
+2026-02-02 13:21:14,664 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0549s
+2026-02-02 13:21:14,686 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0020s
+2026-02-02 13:21:15,265 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:15,266 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2657s
+2026-02-02 13:21:15,336 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:21:15,338 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0690s
+2026-02-02 13:21:15,973 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:15,975 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3148s
+2026-02-02 13:21:16,105 - ChurnGuardAI - INFO - Churn prediction for user testuser: No (Score: 0.0314)
+2026-02-02 13:21:16,107 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1297s
+2026-02-02 13:21:16,752 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0008s
+2026-02-02 13:21:17,300 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:17,302 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2602s
+2026-02-02 13:21:17,306 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0030s
+2026-02-02 13:21:17,881 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:17,883 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2901s
+2026-02-02 13:21:17,943 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0577s
+2026-02-02 13:21:17,963 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 13:21:18,546 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:18,547 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2753s
+2026-02-02 13:21:18,636 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.0860s
+2026-02-02 13:21:19,200 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:19,202 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2648s
+2026-02-02 13:21:19,259 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:21:19,261 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0572s
+2026-02-02 13:21:19,864 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:19,866 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2757s
+2026-02-02 13:21:19,928 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:21:19,930 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0620s
+2026-02-02 13:21:42,103 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:42,104 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3347s
+2026-02-02 13:21:42,719 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 13:21:42,720 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.3063s
+2026-02-02 13:21:43,333 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:43,335 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2904s
+2026-02-02 13:21:43,399 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:21:43,401 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0615s
+2026-02-02 13:21:43,977 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 13:21:43,978 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2770s
+2026-02-02 13:21:44,015 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0351s
+2026-02-02 13:21:44,114 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.0975s
+2026-02-02 13:21:44,178 - ChurnGuardAI - INFO - Churn prediction for user flowuser: No (Score: 0.0906)
+2026-02-02 13:21:44,180 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0611s
+2026-02-02 13:21:44,210 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0025s
+2026-02-02 13:21:44,232 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 13:21:45,066 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 13:21:45,068 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2768s
+2026-02-02 13:21:45,366 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 13:21:45,367 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2980s
+2026-02-02 13:21:45,415 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0463s
+2026-02-02 13:21:45,460 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0428s
+2026-02-02 13:21:46,226 - ChurnGuardAI - INFO - Successful login for user: edgeuser
+2026-02-02 13:21:46,228 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3540s
+2026-02-02 13:21:46,301 - ChurnGuardAI - INFO - Churn prediction for user edgeuser: No (Score: 0.0372)
+2026-02-02 13:21:46,304 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0736s
+2026-02-02 13:21:46,946 - ChurnGuardAI - INFO - Successful login for user: newuser
+2026-02-02 13:21:46,947 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3114s
+2026-02-02 13:21:47,015 - ChurnGuardAI - INFO - Churn prediction for user newuser: Yes (Score: 0.6079)
+2026-02-02 13:21:47,016 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0683s
+2026-02-02 13:21:47,040 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0020s
+2026-02-02 13:21:47,651 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:47,651 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2907s
+2026-02-02 13:21:47,730 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:21:47,731 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0766s
+2026-02-02 13:21:48,399 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:48,403 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2897s
+2026-02-02 13:21:48,464 - ChurnGuardAI - INFO - Churn prediction for user testuser: No (Score: 0.0314)
+2026-02-02 13:21:48,465 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0610s
+2026-02-02 13:21:49,138 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0015s
+2026-02-02 13:21:49,697 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:49,699 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2766s
+2026-02-02 13:21:49,705 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0047s
+2026-02-02 13:21:50,359 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:50,359 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2902s
+2026-02-02 13:21:50,405 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0428s
+2026-02-02 13:21:50,419 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0000s
+2026-02-02 13:21:50,955 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:50,956 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2553s
+2026-02-02 13:21:51,055 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.0964s
+2026-02-02 13:21:51,594 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:51,595 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.2674s
+2026-02-02 13:21:51,653 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:21:51,654 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0571s
+2026-02-02 13:21:52,267 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:21:52,268 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3057s
+2026-02-02 13:21:52,351 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:21:52,353 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0831s
+2026-02-02 13:23:21,282 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:21,285 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3008s
+2026-02-02 13:23:21,371 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:23:21,374 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0868s
+2026-02-02 13:23:41,786 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:41,790 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3254s
+2026-02-02 13:23:42,460 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 13:23:42,462 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.3185s
+2026-02-02 13:23:43,124 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:43,127 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3254s
+2026-02-02 13:23:43,241 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:23:43,243 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1129s
+2026-02-02 13:23:44,020 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 13:23:44,021 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3430s
+2026-02-02 13:23:44,074 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0497s
+2026-02-02 13:23:44,235 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.1585s
+2026-02-02 13:23:44,385 - ChurnGuardAI - INFO - Churn prediction for user flowuser: No (Score: 0.0906)
+2026-02-02 13:23:44,391 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1525s
+2026-02-02 13:23:44,430 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0031s
+2026-02-02 13:23:44,481 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0026s
+2026-02-02 13:23:45,780 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 13:23:45,784 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4433s
+2026-02-02 13:23:46,348 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 13:23:46,349 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.5613s
+2026-02-02 13:23:46,428 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0755s
+2026-02-02 13:23:46,524 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0905s
+2026-02-02 13:23:47,463 - ChurnGuardAI - INFO - Successful login for user: edgeuser
+2026-02-02 13:23:47,466 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3686s
+2026-02-02 13:23:47,707 - ChurnGuardAI - INFO - Churn prediction for user edgeuser: No (Score: 0.0372)
+2026-02-02 13:23:47,710 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.2419s
+2026-02-02 13:23:48,686 - ChurnGuardAI - INFO - Successful login for user: newuser
+2026-02-02 13:23:48,688 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.5376s
+2026-02-02 13:23:48,802 - ChurnGuardAI - INFO - Churn prediction for user newuser: Yes (Score: 0.6079)
+2026-02-02 13:23:48,803 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1129s
+2026-02-02 13:23:48,831 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0020s
+2026-02-02 13:23:49,701 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:49,703 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4348s
+2026-02-02 13:23:49,820 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:23:49,823 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1157s
+2026-02-02 13:23:50,710 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:50,712 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4185s
+2026-02-02 13:23:50,821 - ChurnGuardAI - INFO - Churn prediction for user testuser: No (Score: 0.0314)
+2026-02-02 13:23:50,824 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1082s
+2026-02-02 13:23:52,410 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0020s
+2026-02-02 13:23:53,498 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:53,502 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.5122s
+2026-02-02 13:23:53,513 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0071s
+2026-02-02 13:23:54,379 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:54,380 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4191s
+2026-02-02 13:23:54,464 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0798s
+2026-02-02 13:23:54,491 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0011s
+2026-02-02 13:23:55,400 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:55,401 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4190s
+2026-02-02 13:23:55,570 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.1654s
+2026-02-02 13:23:56,352 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:56,355 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3946s
+2026-02-02 13:23:56,449 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:23:56,452 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0943s
+2026-02-02 13:23:57,273 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:23:57,274 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3965s
+2026-02-02 13:23:57,355 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:23:57,356 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0795s
+2026-02-02 13:24:28,928 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:24:28,930 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3331s
+2026-02-02 13:24:29,669 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 13:24:29,672 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.3603s
+2026-02-02 13:24:30,349 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 13:24:30,351 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3202s
+2026-02-02 13:24:30,411 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0579s
+2026-02-02 13:24:30,574 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.1594s
+2026-02-02 13:24:30,649 - ChurnGuardAI - INFO - Churn prediction for user flowuser: No (Score: 0.0906)
+2026-02-02 13:24:30,651 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0734s
+2026-02-02 13:24:30,676 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0030s
+2026-02-02 13:24:30,697 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0005s
+2026-02-02 13:24:31,724 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 13:24:31,727 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3059s
+2026-02-02 13:24:32,045 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 13:24:32,047 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3178s
+2026-02-02 13:24:32,089 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0400s
+2026-02-02 13:24:32,131 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0382s
+2026-02-02 13:24:32,796 - ChurnGuardAI - INFO - Successful login for user: edgeuser
+2026-02-02 13:24:32,797 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3460s
+2026-02-02 13:24:32,885 - ChurnGuardAI - INFO - Churn prediction for user edgeuser: No (Score: 0.0372)
+2026-02-02 13:24:32,888 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0867s
+2026-02-02 13:24:33,719 - ChurnGuardAI - INFO - Successful login for user: newuser
+2026-02-02 13:24:33,722 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3980s
+2026-02-02 13:24:33,819 - ChurnGuardAI - INFO - Churn prediction for user newuser: Yes (Score: 0.6079)
+2026-02-02 13:24:33,822 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0963s
+2026-02-02 13:24:33,848 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0022s
+2026-02-02 13:24:34,694 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:24:34,695 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4480s
+2026-02-02 13:24:34,822 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:24:34,825 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1277s
+2026-02-02 13:24:35,806 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:24:35,809 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4562s
+2026-02-02 13:24:35,925 - ChurnGuardAI - INFO - Churn prediction for user testuser: No (Score: 0.0314)
+2026-02-02 13:24:35,927 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1147s
+2026-02-02 13:24:37,059 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0016s
+2026-02-02 13:24:37,926 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:24:37,929 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4460s
+2026-02-02 13:24:37,948 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0096s
+2026-02-02 13:24:38,962 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:24:38,965 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.5242s
+2026-02-02 13:24:39,040 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0701s
+2026-02-02 13:24:39,059 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0016s
+2026-02-02 13:24:39,984 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:24:39,986 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4754s
+2026-02-02 13:24:40,153 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.1634s
+2026-02-02 13:24:41,004 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:24:41,005 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4060s
+2026-02-02 13:24:41,201 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:24:41,203 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1945s
+2026-02-02 13:24:42,038 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:24:42,041 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4229s
+2026-02-02 13:24:42,179 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:24:42,181 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1362s
+2026-02-02 13:25:42,280 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:25:42,282 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4738s
+2026-02-02 13:25:42,436 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:25:42,443 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1557s
+2026-02-02 13:25:43,633 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:25:43,636 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.6250s
+2026-02-02 13:25:43,934 - ChurnGuardAI - INFO - Churn prediction for user testuser: No (Score: 0.0314)
+2026-02-02 13:25:43,939 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.2973s
+2026-02-02 13:25:46,303 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0032s
+2026-02-02 13:25:47,487 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:25:47,489 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.5129s
+2026-02-02 13:25:47,499 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0055s
+2026-02-02 13:25:48,372 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:25:48,376 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4002s
+2026-02-02 13:25:48,447 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0682s
+2026-02-02 13:25:48,489 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0040s
+2026-02-02 13:25:49,804 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:25:49,806 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.5091s
+2026-02-02 13:25:49,981 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.1718s
+2026-02-02 13:25:50,908 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:25:50,909 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4412s
+2026-02-02 13:25:50,997 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:25:51,000 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0879s
+2026-02-02 13:25:52,319 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:25:52,322 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.6584s
+2026-02-02 13:25:52,442 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:25:52,446 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1196s
+2026-02-02 13:26:31,008 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:26:31,009 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3207s
+2026-02-02 13:26:31,685 - ChurnGuardAI - WARNING - Failed login attempt for user: testuser
+2026-02-02 13:26:31,686 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 401 Duration: 0.3030s
+2026-02-02 13:26:32,327 - ChurnGuardAI - INFO - Successful login for user: flowuser
+2026-02-02 13:26:32,328 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3183s
+2026-02-02 13:26:32,389 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0584s
+2026-02-02 13:26:32,519 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.1260s
+2026-02-02 13:26:32,637 - ChurnGuardAI - INFO - Churn prediction for user flowuser: No (Score: 0.0906)
+2026-02-02 13:26:32,638 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1154s
+2026-02-02 13:26:32,667 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0032s
+2026-02-02 13:26:32,688 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0015s
+2026-02-02 13:26:33,755 - ChurnGuardAI - INFO - Successful login for user: user0
+2026-02-02 13:26:33,758 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.4036s
+2026-02-02 13:26:34,062 - ChurnGuardAI - INFO - Successful login for user: user1
+2026-02-02 13:26:34,063 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3021s
+2026-02-02 13:26:34,112 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0464s
+2026-02-02 13:26:34,177 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0624s
+2026-02-02 13:26:34,863 - ChurnGuardAI - INFO - Successful login for user: edgeuser
+2026-02-02 13:26:34,864 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3281s
+2026-02-02 13:26:34,948 - ChurnGuardAI - INFO - Churn prediction for user edgeuser: No (Score: 0.0372)
+2026-02-02 13:26:34,949 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0817s
+2026-02-02 13:26:35,637 - ChurnGuardAI - INFO - Successful login for user: newuser
+2026-02-02 13:26:35,638 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3263s
+2026-02-02 13:26:35,722 - ChurnGuardAI - INFO - Churn prediction for user newuser: Yes (Score: 0.6079)
+2026-02-02 13:26:35,724 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0838s
+2026-02-02 13:26:35,744 - ChurnGuardAI - INFO - Path: / Method: GET Status: 200 Duration: 0.0015s
+2026-02-02 13:26:36,496 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:26:36,497 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3708s
+2026-02-02 13:26:36,584 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:26:36,586 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0864s
+2026-02-02 13:26:37,272 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:26:37,273 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3211s
+2026-02-02 13:26:37,363 - ChurnGuardAI - INFO - Churn prediction for user testuser: No (Score: 0.0314)
+2026-02-02 13:26:37,365 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0893s
+2026-02-02 13:26:37,383 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 401 Duration: 0.0015s
+2026-02-02 13:26:38,174 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:26:38,176 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3280s
+2026-02-02 13:26:38,184 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 422 Duration: 0.0045s
+2026-02-02 13:26:38,910 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:26:38,912 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3664s
+2026-02-02 13:26:38,952 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 200 Duration: 0.0385s
+2026-02-02 13:26:38,970 - ChurnGuardAI - INFO - Path: /api/stats Method: GET Status: 401 Duration: 0.0010s
+2026-02-02 13:26:39,666 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:26:39,667 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3518s
+2026-02-02 13:26:39,802 - ChurnGuardAI - INFO - Path: /api/analysis Method: GET Status: 200 Duration: 0.1308s
+2026-02-02 13:26:40,507 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:26:40,509 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3350s
+2026-02-02 13:26:40,599 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:26:40,600 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.0880s
+2026-02-02 13:26:41,342 - ChurnGuardAI - INFO - Successful login for user: testuser
+2026-02-02 13:26:41,345 - ChurnGuardAI - INFO - Path: /api/token Method: POST Status: 200 Duration: 0.3538s
+2026-02-02 13:26:41,466 - ChurnGuardAI - INFO - Churn prediction for user testuser: Yes (Score: 0.7411)
+2026-02-02 13:26:41,468 - ChurnGuardAI - INFO - Path: /api/predict Method: POST Status: 200 Duration: 0.1216s

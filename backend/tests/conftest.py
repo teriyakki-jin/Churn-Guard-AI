@@ -6,12 +6,19 @@ from fastapi.testclient import TestClient
 import sys
 import os
 
+# Set testing environment variable to disable rate limiting
+os.environ["TESTING"] = "true"
+
 # Add backend directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from main import app
 from database import get_db
 from db_models import Base
+from limiter import limiter
+
+# Force disable limiter
+limiter.enabled = False
 
 # In-memory SQLite for testing
 SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"
@@ -44,6 +51,11 @@ def client(db_session):
             pass
     
     app.dependency_overrides[get_db] = override_get_db
+    
+    # Ensure limiter is disabled
+    if hasattr(app.state, "limiter"):
+        app.state.limiter.enabled = False
+        
     with TestClient(app) as client:
         yield client
     app.dependency_overrides.clear()

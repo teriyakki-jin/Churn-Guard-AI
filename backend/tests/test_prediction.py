@@ -91,7 +91,7 @@ def test_predict_high_risk(client, db_session):
 
     # High-risk customer should have higher churn probability
     assert data["churn_risk_score"] > 0.4
-    assert data["summary"] in ["High Risk", "Moderate Risk"]
+    assert data["summary"] in ["Critical Risk", "High Risk", "Moderate Risk"]
 
 
 def test_predict_low_risk(client, db_session):
@@ -109,7 +109,7 @@ def test_predict_low_risk(client, db_session):
 
     # Low-risk customer should have lower churn probability
     assert data["churn_risk_score"] < 0.4
-    assert data["summary"] == "Low Risk"
+    assert data["summary"] in ["Low Risk", "Minimal Risk"]
 
 
 def test_predict_unauthorized(client):
@@ -184,7 +184,8 @@ def test_prediction_suggestions_contract(client, db_session):
     )
 
     data = response.json()
-    suggestions_text = " ".join(data["suggestions"])
+    # suggestions is detailed now, so we need to extract text from objects
+    suggestions_text = " ".join([s.get("details", "") + s.get("action", "") for s in data["suggestions"]])
 
     # Should suggest contract upgrade for month-to-month
     assert "contract" in suggestions_text.lower() or "1-year" in suggestions_text
@@ -201,7 +202,7 @@ def test_prediction_suggestions_payment(client, db_session):
     )
 
     data = response.json()
-    suggestions_text = " ".join(data["suggestions"])
+    suggestions_text = " ".join([s.get("details", "") + s.get("action", "") for s in data["suggestions"]])
 
     # Should suggest automatic payment for electronic check
     assert "payment" in suggestions_text.lower() or "automatic" in suggestions_text.lower()

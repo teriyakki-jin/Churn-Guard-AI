@@ -18,19 +18,20 @@ class ChurnServiceV2:
         self.feature_names = None
         self.metadata = None
         self.model_version = model_version
+        self.base_dir = os.path.dirname(os.path.abspath(__file__))
         self.load_model()
 
     def load_model(self):
         """Load model and feature names."""
         try:
-            model_file = f'churn_model_{self.model_version}.pkl'
-            feature_file = f'feature_names_{self.model_version}.pkl'
-            metadata_file = f'model_metadata_{self.model_version}.json'
+            model_file = os.path.join(self.base_dir, f'churn_model_{self.model_version}.pkl')
+            feature_file = os.path.join(self.base_dir, f'feature_names_{self.model_version}.pkl')
+            metadata_file = os.path.join(self.base_dir, f'model_metadata_{self.model_version}.json')
 
             # Fallback to v1 if v2 doesn't exist
             if not os.path.exists(model_file):
-                model_file = 'churn_model.pkl'
-                feature_file = 'feature_names.pkl'
+                model_file = os.path.join(self.base_dir, 'churn_model.pkl')
+                feature_file = os.path.join(self.base_dir, 'feature_names.pkl')
                 self.model_version = 'v1'
 
             self.model = joblib.load(model_file)
@@ -51,7 +52,7 @@ class ChurnServiceV2:
         df = input_df.copy()
 
         # Get reference data for normalization
-        ref_df = pd.read_csv('data/Customer-Churn.csv')
+        ref_df = pd.read_csv(os.path.join(self.base_dir, 'data', 'Customer-Churn.csv'))
         ref_df['TotalCharges'] = pd.to_numeric(ref_df['TotalCharges'], errors='coerce').fillna(0)
 
         max_charges = ref_df['MonthlyCharges'].max()
@@ -341,7 +342,7 @@ class ChurnServiceV2:
 
     def get_stats(self) -> Dict[str, Any]:
         """Get comprehensive statistics."""
-        df = pd.read_csv('data/Customer-Churn.csv')
+        df = pd.read_csv(os.path.join(self.base_dir, 'data', 'Customer-Churn.csv'))
         df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
         df['TotalCharges'].fillna(df['TotalCharges'].mean(), inplace=True)
 
@@ -383,7 +384,7 @@ class ChurnServiceV2:
 
     def get_analysis(self) -> Dict[str, Any]:
         """Get detailed analysis."""
-        df = pd.read_csv('data/Customer-Churn.csv')
+        df = pd.read_csv(os.path.join(self.base_dir, 'data', 'Customer-Churn.csv'))
         df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce').fillna(0)
 
         # Statistical Tests
