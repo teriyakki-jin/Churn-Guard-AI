@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAuth } from './AuthContext';
+import { useToast } from './ToastContext';
 import { Lock, User } from 'lucide-react';
 
 const Login = () => {
@@ -8,6 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const { login } = useAuth();
+    const { addToast } = useToast();
     const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -16,10 +18,16 @@ const Login = () => {
         setError('');
         try {
             const success = await login(username, password);
-            if (!success) setError('Invalid credentials');
+            if (!success) {
+                setError('Invalid credentials');
+                addToast('로그인 실패: 잘못된 자격 증명', 'error');
+            } else {
+                addToast('로그인 성공! 환영합니다.', 'success');
+            }
         } catch (err) {
             const msg = typeof err === "string" ? err : (err?.message ?? "Invalid credentials");
             setError(msg);
+            addToast(`로그인 오류: ${msg}`, 'error');
         }
         setIsLoading(false);
     };

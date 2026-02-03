@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { AuthProvider, useAuth } from './AuthContext';
+import { ToastProvider, useToast } from './ToastContext';
 import Login from './Login';
 import { LayoutDashboard, UserCheck, TrendingUp, AlertCircle, Users, Activity, LogOut, Lightbulb, PieChart as PieIcon, BarChart as BarIcon } from 'lucide-react';
 import {
@@ -479,6 +480,7 @@ const Strategy = ({ stats, analysis }) => {
 };
 
 const Predictor = () => {
+  const { addToast } = useToast();
   const [formData, setFormData] = useState({
     gender: 'Female', SeniorCitizen: 0, Partner: 'No', Dependents: 'No',
     tenure: 1, PhoneService: 'Yes', MultipleLines: 'No', InternetService: 'Fiber optic',
@@ -489,6 +491,7 @@ const Predictor = () => {
   });
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showAdvanced, setShowAdvanced] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -496,9 +499,19 @@ const Predictor = () => {
     try {
       const res = await axios.post(`${API_URL}/predict`, formData);
       setResult(res.data);
+
+      // Show toast based on risk level
+      const score = res.data.churn_risk_score;
+      if (score > 0.7) {
+        addToast(`위험: 이탈 확률 ${(score * 100).toFixed(1)}% - 즉시 조치 필요`, 'error', 6000);
+      } else if (score > 0.5) {
+        addToast(`주의: 이탈 확률 ${(score * 100).toFixed(1)}% - 관리 필요`, 'warning', 5000);
+      } else {
+        addToast(`분석 완료: 이탈 확률 ${(score * 100).toFixed(1)}%`, 'success');
+      }
     } catch (err) {
       console.error(err);
-      alert('Error connecting to backend.');
+      addToast('서버 연결 오류가 발생했습니다.', 'error');
     }
     setLoading(false);
   };
@@ -509,9 +522,11 @@ const Predictor = () => {
       <div className="grid">
         <div className="card" style={{ flex: 2 }}>
           <form onSubmit={handleSubmit}>
+            {/* 기본 필수 정보 */}
+            <h3 style={{ marginBottom: '1rem', fontSize: '1rem' }}>📋 기본 정보</h3>
             <div className="grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
               <div className="form-group">
-                <label className="form-label">계약 형태 (Contract Type)</label>
+                <label className="form-label">계약 형태</label>
                 <select className="form-control" value={formData.Contract} onChange={e => setFormData({ ...formData, Contract: e.target.value })}>
                   <option>Month-to-month</option>
                   <option>One year</option>
@@ -519,7 +534,7 @@ const Predictor = () => {
                 </select>
               </div>
               <div className="form-group">
-                <label className="form-label">결제 수단 (Payment Method)</label>
+                <label className="form-label">결제 수단</label>
                 <select className="form-control" value={formData.PaymentMethod} onChange={e => setFormData({ ...formData, PaymentMethod: e.target.value })}>
                   <option>Electronic check</option>
                   <option>Mailed check</option>
@@ -528,7 +543,7 @@ const Predictor = () => {
                 </select>
               </div>
               <div className="form-group">
-                <label className="form-label">인터넷 서비스 (Internet Service)</label>
+                <label className="form-label">인터넷 서비스</label>
                 <select className="form-control" value={formData.InternetService} onChange={e => setFormData({ ...formData, InternetService: e.target.value })}>
                   <option>Fiber optic</option>
                   <option>DSL</option>
@@ -536,12 +551,140 @@ const Predictor = () => {
                 </select>
               </div>
               <div className="form-group">
-                <label className="form-label">가입 기간 (개월) (Tenure)</label>
-                <input type="number" className="form-control" value={formData.tenure} onChange={e => setFormData({ ...formData, tenure: parseInt(e.target.value) })} />
+                <label className="form-label">가입 기간 (개월)</label>
+                <input type="number" className="form-control" min="0" max="72" value={formData.tenure} onChange={e => setFormData({ ...formData, tenure: parseInt(e.target.value) || 0 })} />
+              </div>
+              <div className="form-group">
+                <label className="form-label">월 요금 ($)</label>
+                <input type="number" className="form-control" min="0" step="0.01" value={formData.MonthlyCharges} onChange={e => setFormData({ ...formData, MonthlyCharges: parseFloat(e.target.value) || 0 })} />
+              </div>
+              <div className="form-group">
+                <label className="form-label">총 청구액 ($)</label>
+                <input type="number" className="form-control" min="0" step="0.01" value={formData.TotalCharges} onChange={e => setFormData({ ...formData, TotalCharges: parseFloat(e.target.value) || 0 })} />
               </div>
             </div>
+
+            {/* 고급 옵션 토글 */}
+            <button type="button" onClick={() => setShowAdvanced(!showAdvanced)} style={{
+              background: 'transparent', border: '1px solid var(--glass-border)', color: 'var(--text-muted)',
+              padding: '0.5rem 1rem', borderRadius: '6px', cursor: 'pointer', marginTop: '1rem', width: '100%'
+            }}>
+              {showAdvanced ? '▲ 고급 옵션 숨기기' : '▼ 고급 옵션 보기'}
+            </button>
+
+            {/* 고급 옵션 */}
+            {showAdvanced && (
+              <div style={{ marginTop: '1rem', padding: '1rem', background: 'rgba(255,255,255,0.02)', borderRadius: '8px' }}>
+                <h4 style={{ marginBottom: '1rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>👤 고객 정보</h4>
+                <div className="grid" style={{ gridTemplateColumns: '1fr 1fr 1fr 1fr' }}>
+                  <div className="form-group">
+                    <label className="form-label">성별</label>
+                    <select className="form-control" value={formData.gender} onChange={e => setFormData({ ...formData, gender: e.target.value })}>
+                      <option>Female</option>
+                      <option>Male</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">시니어</label>
+                    <select className="form-control" value={formData.SeniorCitizen} onChange={e => setFormData({ ...formData, SeniorCitizen: parseInt(e.target.value) })}>
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">배우자</label>
+                    <select className="form-control" value={formData.Partner} onChange={e => setFormData({ ...formData, Partner: e.target.value })}>
+                      <option>No</option>
+                      <option>Yes</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">부양가족</label>
+                    <select className="form-control" value={formData.Dependents} onChange={e => setFormData({ ...formData, Dependents: e.target.value })}>
+                      <option>No</option>
+                      <option>Yes</option>
+                    </select>
+                  </div>
+                </div>
+
+                <h4 style={{ marginTop: '1rem', marginBottom: '1rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>📞 서비스 옵션</h4>
+                <div className="grid" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+                  <div className="form-group">
+                    <label className="form-label">전화 서비스</label>
+                    <select className="form-control" value={formData.PhoneService} onChange={e => setFormData({ ...formData, PhoneService: e.target.value })}>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">다중 회선</label>
+                    <select className="form-control" value={formData.MultipleLines} onChange={e => setFormData({ ...formData, MultipleLines: e.target.value })}>
+                      <option>No</option>
+                      <option>Yes</option>
+                      <option>No phone service</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">온라인 보안</label>
+                    <select className="form-control" value={formData.OnlineSecurity} onChange={e => setFormData({ ...formData, OnlineSecurity: e.target.value })}>
+                      <option>No</option>
+                      <option>Yes</option>
+                      <option>No internet service</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">온라인 백업</label>
+                    <select className="form-control" value={formData.OnlineBackup} onChange={e => setFormData({ ...formData, OnlineBackup: e.target.value })}>
+                      <option>No</option>
+                      <option>Yes</option>
+                      <option>No internet service</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">기기 보호</label>
+                    <select className="form-control" value={formData.DeviceProtection} onChange={e => setFormData({ ...formData, DeviceProtection: e.target.value })}>
+                      <option>No</option>
+                      <option>Yes</option>
+                      <option>No internet service</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">기술 지원</label>
+                    <select className="form-control" value={formData.TechSupport} onChange={e => setFormData({ ...formData, TechSupport: e.target.value })}>
+                      <option>No</option>
+                      <option>Yes</option>
+                      <option>No internet service</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">스트리밍 TV</label>
+                    <select className="form-control" value={formData.StreamingTV} onChange={e => setFormData({ ...formData, StreamingTV: e.target.value })}>
+                      <option>No</option>
+                      <option>Yes</option>
+                      <option>No internet service</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">스트리밍 영화</label>
+                    <select className="form-control" value={formData.StreamingMovies} onChange={e => setFormData({ ...formData, StreamingMovies: e.target.value })}>
+                      <option>No</option>
+                      <option>Yes</option>
+                      <option>No internet service</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">전자 청구서</label>
+                    <select className="form-control" value={formData.PaperlessBilling} onChange={e => setFormData({ ...formData, PaperlessBilling: e.target.value })}>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <button type="submit" className="btn-primary" style={{ width: '100%', marginTop: '1rem' }} disabled={loading}>
-              {loading ? '분석 중...' : '이탈 위험 분석 실행'}
+              {loading ? '분석 중...' : '🔍 이탈 위험 분석 실행'}
             </button>
           </form>
         </div>
@@ -549,20 +692,70 @@ const Predictor = () => {
         <div className="card" style={{ flex: 1.5, display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
           {result ? (
             <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
                 <div style={{ fontSize: '1.1rem', color: 'var(--text-muted)' }}>분석 상태: <strong>{result.summary}</strong></div>
                 <div className="stat-value" style={{ color: result.churn_risk_score > 0.5 ? 'var(--accent)' : 'var(--success)', webkitTextFillColor: 'initial' }}>
                   {(result.churn_risk_score * 100).toFixed(1)}%
                 </div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+                  신뢰도: {((result.confidence || 0) * 100).toFixed(1)}% | 모델: {result.model_version || 'v2'}
+                </div>
               </div>
 
-              <div style={{ marginTop: '1.5rem' }}>
+              {/* Risk Factors */}
+              {result.risk_factors && result.risk_factors.length > 0 && (
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <AlertCircle size={18} color="var(--accent)" /> 위험 요인 분석:
+                  </strong>
+                  {result.risk_factors.map((rf, i) => (
+                    <div key={i} style={{
+                      padding: '0.5rem 0.75rem',
+                      borderRadius: '6px',
+                      background: rf.impact === 'high' ? 'rgba(244, 63, 94, 0.1)' : rf.impact === 'medium' ? 'rgba(251, 191, 36, 0.1)' : 'rgba(255,255,255,0.03)',
+                      borderLeft: `3px solid ${rf.impact === 'high' ? 'var(--accent)' : rf.impact === 'medium' ? '#fbbf24' : 'var(--text-muted)'}`,
+                      marginBottom: '0.5rem',
+                      fontSize: '0.85rem'
+                    }}>
+                      <div style={{ fontWeight: 'bold', color: rf.impact === 'high' ? 'var(--accent)' : rf.impact === 'medium' ? '#fbbf24' : 'var(--text-main)' }}>
+                        {rf.factor}
+                      </div>
+                      <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>{rf.description}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Suggestions */}
+              <div>
                 <strong style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                   <Lightbulb size={18} color="yellow" /> 맞춤형 대응 전략:
                 </strong>
                 {(result.suggestions || []).map((s, i) => (
-                  <div key={i} style={{ padding: '0.75rem', borderRadius: '8px', background: 'var(--glass)', border: '1px solid var(--glass-border)', marginBottom: '0.5rem', fontSize: '0.9rem' }}>
-                    {s}
+                  <div key={i} style={{
+                    padding: '0.75rem',
+                    borderRadius: '8px',
+                    background: 'var(--glass)',
+                    border: '1px solid var(--glass-border)',
+                    marginBottom: '0.5rem',
+                    fontSize: '0.9rem'
+                  }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                      <strong style={{ color: 'var(--primary)' }}>{s.action || s}</strong>
+                      {s.priority && (
+                        <span style={{
+                          fontSize: '0.7rem',
+                          padding: '2px 8px',
+                          borderRadius: '10px',
+                          background: s.priority === 'high' ? 'var(--accent)' : s.priority === 'medium' ? '#fbbf24' : 'var(--success)',
+                          color: '#fff'
+                        }}>
+                          {s.priority === 'high' ? '높음' : s.priority === 'medium' ? '중간' : '낮음'}
+                        </span>
+                      )}
+                    </div>
+                    {s.details && <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>{s.details}</div>}
+                    {s.expected_impact && <div style={{ color: 'var(--success)', fontSize: '0.8rem', marginTop: '0.3rem' }}>→ {s.expected_impact}</div>}
                   </div>
                 ))}
               </div>
@@ -627,7 +820,9 @@ const AppContent = () => {
 function App() {
   return (
     <AuthProvider>
-      <AppContent />
+      <ToastProvider>
+        <AppContent />
+      </ToastProvider>
     </AuthProvider>
   );
 }
