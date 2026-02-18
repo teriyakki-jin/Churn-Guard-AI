@@ -14,3 +14,5 @@ httpx
 psycopg2-binary
 sqlalchemy
 slowapi
+fpdf2
+fastapi-mail

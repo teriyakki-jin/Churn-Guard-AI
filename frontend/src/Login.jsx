@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAuth } from './AuthContext';
 import { useToast } from './ToastContext';
-import { Lock, User } from 'lucide-react';
+import { Lock, User, Mail } from 'lucide-react';
+import axios from 'axios';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
     const [error, setError] = useState('');
+    const [isRegister, setIsRegister] = useState(false);
     const { login } = useAuth();
     const { addToast } = useToast();
     const [isLoading, setIsLoading] = useState(false);
@@ -16,20 +19,45 @@ const Login = () => {
         e.preventDefault();
         setIsLoading(true);
         setError('');
-        try {
-            const success = await login(username, password);
-            if (!success) {
-                setError('Invalid credentials');
-                addToast('로그인 실패: 잘못된 자격 증명', 'error');
-            } else {
-                addToast('로그인 성공! 환영합니다.', 'success');
+
+        if (isRegister) {
+            try {
+                await axios.post('/api/register', { username, email, password });
+                addToast('회원가입 성공! 로그인해주세요.', 'success');
+                setIsRegister(false);
+                setEmail('');
+            } catch (err) {
+                const detail = err.response?.data?.detail ?? '회원가입에 실패했습니다.';
+                setError(detail);
+                addToast(`회원가입 실패: ${detail}`, 'error');
             }
-        } catch (err) {
-            const msg = typeof err === "string" ? err : (err?.message ?? "Invalid credentials");
-            setError(msg);
-            addToast(`로그인 오류: ${msg}`, 'error');
+        } else {
+            try {
+                const success = await login(username, password);
+                if (!success) {
+                    setError('Invalid credentials');
+                    addToast('로그인 실패: 잘못된 자격 증명', 'error');
+                } else {
+                    addToast('로그인 성공! 환영합니다.', 'success');
+                }
+            } catch (err) {
+                const msg = typeof err === "string" ? err : (err?.message ?? "Invalid credentials");
+                setError(msg);
+                addToast(`로그인 오류: ${msg}`, 'error');
+            }
         }
         setIsLoading(false);
+    };
+
+    const inputStyle = {
+        width: '100%',
+        padding: '12px 12px 12px 45px',
+        background: 'rgba(0, 0, 0, 0.2)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '8px',
+        color: 'white',
+        outline: 'none',
+        fontSize: '1rem'
     };
 
     return (
@@ -58,8 +86,12 @@ const Login = () => {
                 }}
             >
                 <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                    <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem', background: 'linear-gradient(to right, #6366f1, #ec4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Welcome Back</h2>
-                    <p style={{ color: '#94a3b8' }}>Please sign in to continue</p>
+                    <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '0.5rem', background: 'linear-gradient(to right, #6366f1, #ec4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                        {isRegister ? 'Create Account' : 'Welcome Back'}
+                    </h2>
+                    <p style={{ color: '#94a3b8' }}>
+                        {isRegister ? 'Fill in the details to sign up' : 'Please sign in to continue'}
+                    </p>
                 </div>
 
                 <form onSubmit={handleSubmit}>
@@ -71,19 +103,27 @@ const Login = () => {
                                 placeholder="Username"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '12px 12px 12px 45px',
-                                    background: 'rgba(0, 0, 0, 0.2)',
-                                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                                    borderRadius: '8px',
-                                    color: 'white',
-                                    outline: 'none',
-                                    fontSize: '1rem'
-                                }}
+                                required
+                                style={inputStyle}
                             />
                         </div>
                     </div>
+
+                    {isRegister && (
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <div style={{ position: 'relative' }}>
+                                <Mail size={20} color="#94a3b8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
+                                <input
+                                    type="email"
+                                    placeholder="Email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                    style={inputStyle}
+                                />
+                            </div>
+                        </div>
+                    )}
 
                     <div style={{ marginBottom: '2rem' }}>
                         <div style={{ position: 'relative' }}>
@@ -93,16 +133,8 @@ const Login = () => {
                                 placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '12px 12px 12px 45px',
-                                    background: 'rgba(0, 0, 0, 0.2)',
-                                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                                    borderRadius: '8px',
-                                    color: 'white',
-                                    outline: 'none',
-                                    fontSize: '1rem'
-                                }}
+                                required
+                                style={inputStyle}
                             />
                         </div>
                     </div>
@@ -130,9 +162,29 @@ const Login = () => {
                             transition: 'opacity 0.2s'
                         }}
                     >
-                        {isLoading ? 'Signing in...' : 'Sign In'}
+                        {isLoading ? (isRegister ? 'Creating...' : 'Signing in...') : (isRegister ? 'Sign Up' : 'Sign In')}
                     </button>
                 </form>
+
+                <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+                    <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
+                        {isRegister ? 'Already have an account? ' : "Don't have an account? "}
+                    </span>
+                    <button
+                        onClick={() => { setIsRegister(!isRegister); setError(''); }}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            color: '#6366f1',
+                            cursor: 'pointer',
+                            fontSize: '0.9rem',
+                            fontWeight: '600',
+                            textDecoration: 'underline'
+                        }}
+                    >
+                        {isRegister ? 'Sign In' : 'Sign Up'}
+                    </button>
+                </div>
             </motion.div>
         </div>
     );

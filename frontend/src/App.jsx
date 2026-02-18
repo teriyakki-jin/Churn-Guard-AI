@@ -3,7 +3,8 @@ import axios from 'axios';
 import { AuthProvider, useAuth } from './AuthContext';
 import { ToastProvider, useToast } from './ToastContext';
 import Login from './Login';
-import { LayoutDashboard, UserCheck, TrendingUp, AlertCircle, Users, Activity, LogOut, Lightbulb, PieChart as PieIcon, BarChart as BarIcon } from 'lucide-react';
+import Simulation from './Simulation';
+import { LayoutDashboard, UserCheck, TrendingUp, AlertCircle, Users, Activity, LogOut, Lightbulb, PieChart as PieIcon, BarChart as BarIcon, Radio, Download, Mail, Send, FileText, X } from 'lucide-react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   PieChart, Pie, Cell, Legend
@@ -114,6 +115,9 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
       <div className={`nav-item ${activeTab === 'predictor' ? 'active' : ''}`} onClick={() => setActiveTab('predictor')}>
         <UserCheck size={20} /> Predictor
       </div>
+      <div className={`nav-item ${activeTab === 'simulation' ? 'active' : ''}`} onClick={() => setActiveTab('simulation')}>
+        <Radio size={20} /> Simulation
+      </div>
       <div style={{ marginTop: 'auto', cursor: 'pointer' }} className="nav-item" onClick={logout}>
         <LogOut size={20} /> Sign Out
       </div>
@@ -202,6 +206,50 @@ const Dashboard = ({ stats }) => {
 
 const Strategy = ({ stats, analysis }) => {
   const [selectedInsight, setSelectedInsight] = useState(null);
+  const { addToast } = useToast();
+  const [downloading, setDownloading] = useState(null);
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [emailAddress, setEmailAddress] = useState('');
+  const [sendingEmail, setSendingEmail] = useState(false);
+
+  const handleDownload = async (type) => {
+    setDownloading(type);
+    try {
+      const token = localStorage.getItem('token');
+      const res = await axios.get(`${API_URL}/reports/export/${type}`, {
+        headers: { Authorization: `Bearer ${token}` },
+        responseType: 'blob',
+      });
+      const url = window.URL.createObjectURL(res.data);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = type === 'csv' ? 'churn_stats.csv' : 'churn_report.pdf';
+      a.click();
+      window.URL.revokeObjectURL(url);
+      addToast(`${type.toUpperCase()} 다운로드 완료`, 'success');
+    } catch {
+      addToast(`${type.toUpperCase()} 다운로드 실패`, 'error');
+    }
+    setDownloading(null);
+  };
+
+  const handleSendEmail = async () => {
+    if (!emailAddress) return;
+    setSendingEmail(true);
+    try {
+      const token = localStorage.getItem('token');
+      await axios.post(`${API_URL}/notifications/send-report`,
+        { email: [emailAddress] },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      addToast(`${emailAddress}로 리포트 발송 요청 완료`, 'success');
+      setShowEmailModal(false);
+      setEmailAddress('');
+    } catch {
+      addToast('이메일 발송 실패', 'error');
+    }
+    setSendingEmail(false);
+  };
 
   if (!stats) return <div>Loading strategies...</div>;
 
@@ -270,7 +318,88 @@ const Strategy = ({ stats, analysis }) => {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="main-content">
-      <h1>Business Strategy & Advanced Analysis</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+        <h1 style={{ margin: 0 }}>Business Strategy & Advanced Analysis</h1>
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <button
+            onClick={() => handleDownload('csv')}
+            disabled={downloading === 'csv'}
+            style={{
+              padding: '0.5rem 1rem', background: 'var(--glass)', border: '1px solid var(--glass-border)',
+              borderRadius: '8px', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem'
+            }}
+          >
+            <Download size={16} /> {downloading === 'csv' ? '...' : 'CSV'}
+          </button>
+          <button
+            onClick={() => handleDownload('pdf')}
+            disabled={downloading === 'pdf'}
+            style={{
+              padding: '0.5rem 1rem', background: 'var(--glass)', border: '1px solid var(--glass-border)',
+              borderRadius: '8px', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem'
+            }}
+          >
+            <FileText size={16} /> {downloading === 'pdf' ? '...' : 'PDF'}
+          </button>
+          <button
+            onClick={() => setShowEmailModal(true)}
+            style={{
+              padding: '0.5rem 1rem', background: 'var(--primary)', border: 'none',
+              borderRadius: '8px', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem'
+            }}
+          >
+            <Mail size={16} /> Email
+          </button>
+        </div>
+      </div>
+
+      {showEmailModal && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          background: 'rgba(0,0,0,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000
+        }} onClick={() => setShowEmailModal(false)}>
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="card"
+            style={{ maxWidth: '420px', width: '100%', position: 'relative' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button onClick={() => setShowEmailModal(false)} style={{
+              position: 'absolute', top: '15px', right: '15px', background: 'var(--glass)',
+              border: '1px solid var(--glass-border)', borderRadius: '50%', width: '30px', height: '30px',
+              cursor: 'pointer', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center'
+            }}>
+              <X size={16} />
+            </button>
+            <h3 style={{ marginBottom: '1rem' }}>리포트 이메일 발송</h3>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
+              입력한 이메일로 Churn 분석 PDF 리포트를 발송합니다.
+            </p>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <input
+                type="email"
+                placeholder="recipient@example.com"
+                value={emailAddress}
+                onChange={(e) => setEmailAddress(e.target.value)}
+                className="form-control"
+                style={{ flex: 1 }}
+              />
+              <button
+                onClick={handleSendEmail}
+                disabled={sendingEmail || !emailAddress}
+                style={{
+                  padding: '0.75rem 1.2rem', background: 'var(--primary)', border: 'none',
+                  borderRadius: '8px', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.4rem',
+                  opacity: sendingEmail || !emailAddress ? 0.5 : 1
+                }}
+              >
+                <Send size={16} /> {sendingEmail ? '...' : '발송'}
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
 
       <div className="grid">
         <div className="card" style={{ flex: 1.5 }}>
@@ -807,6 +936,7 @@ const MainContent = () => {
         {activeTab === 'dashboard' && <Dashboard key="dash" stats={stats} />}
         {activeTab === 'strategy' && <Strategy key="strat" stats={stats} analysis={analysis} />}
         {activeTab === 'predictor' && <Predictor key="pred" />}
+        {activeTab === 'simulation' && <Simulation key="sim" />}
       </AnimatePresence>
     </div>
   );

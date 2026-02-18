@@ -4,19 +4,19 @@
 
 XGBoost 기반의 머신러닝 모델과 현대적인 React 프론트엔드, 그리고 운영 최적화가 적용된 FastAPI 백엔드를 통합하여 안정적이고 확장 가능한 서비스를 제공합니다.
 
-## 🚀 주요 기능 (Key Features)
+##  주요 기능 (Key Features)
 
-### 1. 📊 대시보드 및 분석 (Analytics)
+### 1.  대시보드 및 분석 (Analytics)
 - **실시간 대시보드**: 총 고객 수, 이탈률, 주요 지표를 한눈에 파악.
 - **전략 분석**: 통계적 기법(Chi-square, Mann-Whitney U)을 활용한 심층 이탈 원인 분석.
 - **데이터 시각화**: 계약 형태, 결제 방식 등에 따른 이탈 패턴을 직관적인 차트로 제공.
 
-### 2. 🤖 AI 이탈 예측 (Prediction)
+### 2.  AI 이탈 예측 (Prediction)
 - **개별 위험도 예측**: 고객 프로필 입력 시 실시간으로 이탈 확률(0~100%) 계산.
 - **위험 요인 식별**: 이탈에 기여하는 주요 요인(Risk Factors)을 분석하여 제시.
 - **맞춤형 제안**: 고객 특성에 맞는 구체적인 유지 전략(할인, 약정 변경 등) 자동 생성.
 
-### 3. 🛡️ 운영 최적화 (Operational Excellence) [New]
+### 3.  운영 최적화 (Operational Excellence) [New]
 - **보안 및 트래픽 관리**: `slowapi`를 이용한 IP 기반 API 속도 제한 (Rate Limiting) 적용.
 - **중앙 집중식 로깅**: `RotatingFileHandler`를 통한 요청/응답 및 에러 로그 체계적 관리.
 - **향상된 에러 처리**: 표준화된 JSON 에러 응답 및 커스텀 예외 처리로 클라이언트 호환성 강화.
@@ -33,7 +33,7 @@ XGBoost 기반의 머신러닝 모델과 현대적인 React 프론트엔드, 그
 | **DevOps** | Docker, Docker Compose, GitHub Actions |
 | **Testing** | Pytest, TestClient |
 
-## 📂 프로젝트 구조 (Project Structure)
+##  프로젝트 구조 (Project Structure)
 
 ```
 Churn-Guard-AI/
@@ -51,7 +51,7 @@ Churn-Guard-AI/
 └── README.md               # 프로젝트 문서
 ```
 
-## 📦 시작하기 (Getting Started)
+##  시작하기 (Getting Started)
 
 ### 사전 요구 사항
 - Docker Desktop (권장)

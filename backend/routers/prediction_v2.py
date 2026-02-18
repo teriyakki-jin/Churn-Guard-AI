@@ -7,7 +7,7 @@ from typing import Optional, List, Dict, Any
 from enum import Enum
 
 from models import CustomerData
-from services_v2 import ChurnServiceV2
+from service_container import get_churn_service
 from auth import User, get_current_user
 from starlette.requests import Request
 from limiter import limiter
@@ -15,7 +15,7 @@ from logger import logger
 from exceptions import PredictionError
 
 router = APIRouter()
-service = ChurnServiceV2()
+service = get_churn_service()
 
 
 # ============== Response Models for Documentation ==============
@@ -205,7 +205,7 @@ async def predict_churn(
     """
     try:
         result = service.predict(data.dict())
-        logger.info(f"Churn prediction for user {current_user.username}: {result['prediction']} (Score: {result['churn_risk_score']:.4f})")
+        logger.info(f"Churn prediction for user {current_user.username}: {result['prediction']} (Score: {result['churn_risk_score']:.4f}) [Model: {result['model_version']}]")
         return result
     except Exception as e:
         logger.error(f"Prediction error: {str(e)}")

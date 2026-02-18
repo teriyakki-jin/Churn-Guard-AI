@@ -8,44 +8,53 @@ from scipy import stats
 from typing import Dict, Any, List, Optional
 import json
 import os
+from ab_testing import ModelRegistry, TrafficRouter
+from logger import logger
 
 
 class ChurnServiceV2:
     """Enhanced Churn Prediction Service with Feature Engineering."""
 
     def __init__(self, model_version: str = 'v2'):
-        self.model = None
-        self.feature_names = None
-        self.metadata = None
-        self.model_version = model_version
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
-        self.load_model()
+        self.model_version = model_version
+        self.registry = ModelRegistry()
+        self.router = TrafficRouter(self.registry)
+        
+        # Load default model (v2)
+        v2_path = os.path.join(self.base_dir, 'churn_model_v2.pkl')
+        if not os.path.exists(v2_path):
+             v2_path = os.path.join(self.base_dir, 'churn_model.pkl') # Fallback to v1
+             
+        self.registry.register_model('v2', v2_path, 'v2')
+        
+        # Load candidate model (v2_candidate) - optional
+        candidate_path = os.path.join(self.base_dir, 'churn_model_candidate.pkl')
+        if os.path.exists(candidate_path):
+            self.registry.register_model('v2_candidate', candidate_path, 'v2_candidate')
+            logger.info("Candidate model 'v2_candidate' registered.")
+        
+        # Default Weights (can be updated via API later)
+        # For now, 80% to v2, 20% to candidate if it exists
+        if 'v2_candidate' in self.registry._models:
+             self.router.set_routing_weights({'v2': 0.8, 'v2_candidate': 0.2})
+        
+        # Load metadata/features from default for shared usage (or could be per-model)
+        feature_file = os.path.join(self.base_dir, f'feature_names_{model_version}.pkl')
+        if not os.path.exists(feature_file):
+            feature_file = os.path.join(self.base_dir, 'feature_names.pkl')
+            
+        self.feature_names = joblib.load(feature_file)
+        
+        metadata_file = os.path.join(self.base_dir, f'model_metadata_{model_version}.json')
+        if os.path.exists(metadata_file):
+            with open(metadata_file, 'r') as f:
+                self.metadata = json.load(f)
+        else:
+            self.metadata = None
 
-    def load_model(self):
-        """Load model and feature names."""
-        try:
-            model_file = os.path.join(self.base_dir, f'churn_model_{self.model_version}.pkl')
-            feature_file = os.path.join(self.base_dir, f'feature_names_{self.model_version}.pkl')
-            metadata_file = os.path.join(self.base_dir, f'model_metadata_{self.model_version}.json')
-
-            # Fallback to v1 if v2 doesn't exist
-            if not os.path.exists(model_file):
-                model_file = os.path.join(self.base_dir, 'churn_model.pkl')
-                feature_file = os.path.join(self.base_dir, 'feature_names.pkl')
-                self.model_version = 'v1'
-
-            self.model = joblib.load(model_file)
-            self.feature_names = joblib.load(feature_file)
-
-            if os.path.exists(metadata_file):
-                with open(metadata_file, 'r') as f:
-                    self.metadata = json.load(f)
-
-            print(f"Model {self.model_version} loaded successfully")
-        except Exception as e:
-            print(f"Error loading model: {e}")
-            self.model = None
-            self.feature_names = None
+    # load_model is now handled in __init__ via registry, removing standalone method to avoid confusion
+    # or keeping empty for compatibility if called externally (unlikely)
 
     def engineer_features(self, input_df: pd.DataFrame, raw_df: pd.DataFrame) -> pd.DataFrame:
         """Apply feature engineering to input data."""
@@ -139,7 +148,15 @@ class ChurnServiceV2:
 
     def predict(self, input_dict: Dict[str, Any]) -> Dict[str, Any]:
         """Make prediction with detailed analysis."""
-        if self.model is None or self.feature_names is None:
+        # A/B Routing
+        selected_model_id = self.router.select_model()
+        model_wrapper = self.registry.get_model(selected_model_id)
+        current_model = model_wrapper.model
+        current_version = model_wrapper.version
+        
+        logger.info(f"Using model {selected_model_id} for prediction")
+
+        if current_model is None or self.feature_names is None:
             raise Exception("Model not loaded")
 
         # Create input dataframe
@@ -175,7 +192,7 @@ class ChurnServiceV2:
         final_df = final_df[self.feature_names]
 
         # Make prediction
-        prob = float(self.model.predict_proba(final_df)[0][1])
+        prob = float(current_model.predict_proba(final_df)[0][1])
 
         # Generate risk factors
         risk_factors = self._analyze_risk_factors(input_dict, prob)
@@ -190,7 +207,7 @@ class ChurnServiceV2:
             "confidence": round(abs(prob - 0.5) * 2, 4),
             "risk_factors": risk_factors,
             "suggestions": suggestions,
-            "model_version": self.model_version
+            "model_version": current_version
         }
 
     def _analyze_risk_factors(self, input_dict: Dict, prob: float) -> List[Dict]:
@@ -350,16 +367,19 @@ class ChurnServiceV2:
             return (df.groupby(col)['Churn'].apply(lambda x: (x == 'Yes').mean()) * 100).to_dict()
 
         # Calculate feature importance from model if available
+        # For stats, we use the default model (v2)
         feature_importance = {}
-        if self.model is not None and hasattr(self.model, 'named_estimators_'):
-            xgb_model = self.model.named_estimators_.get('xgb')
+        default_model = self.registry.get_model('v2').model
+        if default_model is not None and hasattr(default_model, 'named_estimators_'):
+            xgb_model = default_model.named_estimators_.get('xgb')
             if xgb_model is not None:
                 importances = xgb_model.feature_importances_
                 top_indices = np.argsort(importances)[-4:][::-1]
                 for idx in top_indices:
                     if idx < len(self.feature_names):
                         feature_importance[self.feature_names[idx]] = round(float(importances[idx]), 2)
-        else:
+
+        if not feature_importance:
             feature_importance = {
                 "MonthlyCharges": 0.42,
                 "Contract": 0.31,
