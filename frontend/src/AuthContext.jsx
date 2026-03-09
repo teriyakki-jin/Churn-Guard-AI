@@ -10,16 +10,14 @@ if (storedToken) {
 }
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(storedToken ? { username: 'admin' } : null);
     const [token, setToken] = useState(storedToken);
+    const user = token ? { username: 'admin' } : null;
 
     useEffect(() => {
         if (token) {
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-            setUser({ username: 'admin' });
         } else {
             delete axios.defaults.headers.common['Authorization'];
-            setUser(null);
         }
     }, [token]);
 

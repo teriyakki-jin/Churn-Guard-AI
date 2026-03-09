@@ -255,7 +255,7 @@ const Simulation = () => {
                 시뮬레이션을 시작하면 실시간 예측이 표시됩니다
               </div>
             ) : (
-              predictions.map((pred, idx) => (
+              predictions.map((pred) => (
                 <motion.div
                   key={pred.customer_id}
                   initial={{ opacity: 0, x: -50, height: 0 }}
