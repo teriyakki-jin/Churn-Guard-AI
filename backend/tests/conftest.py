@@ -3,6 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 from fastapi.testclient import TestClient
+from unittest.mock import MagicMock
 import sys
 import os
 
@@ -11,6 +12,13 @@ os.environ["TESTING"] = "true"
 
 # Add backend directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Stub out fastapi_mail before importing the app — the installed version has a
+# bug where SecretStr is undefined at import time. Email is not tested here.
+_mail_stub = MagicMock()
+sys.modules.setdefault("fastapi_mail", _mail_stub)
+for _sub in ("fastapi_mail.config", "fastapi_mail.schemas", "fastapi_mail.errors"):
+    sys.modules.setdefault(_sub, _mail_stub)
 
 from main import app
 from database import get_db
