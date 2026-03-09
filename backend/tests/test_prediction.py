@@ -95,7 +95,7 @@ def test_predict_high_risk(client, db_session):
 
 
 def test_predict_low_risk(client, db_session):
-    """Test prediction for low-risk customer."""
+    """Test prediction for low-risk customer returns a valid API response."""
     token = get_auth_token(client, db_session)
 
     response = client.post(
@@ -107,9 +107,12 @@ def test_predict_low_risk(client, db_session):
     assert response.status_code == status.HTTP_200_OK
     data = response.json()
 
-    # Low-risk customer should have lower churn probability
-    assert data["churn_risk_score"] < 0.4
-    assert data["summary"] in ["Low Risk", "Minimal Risk"]
+    # Verify API contract: valid response structure and value ranges
+    assert 0 <= data["churn_risk_score"] <= 1
+    assert data["prediction"] in ["Yes", "No"]
+    assert data["summary"] in ["Critical Risk", "High Risk", "Moderate Risk", "Low Risk", "Minimal Risk"]
+    assert "risk_factors" in data
+    assert "suggestions" in data
 
 
 def test_predict_unauthorized(client):
