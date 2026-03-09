@@ -53,7 +53,16 @@ dist/
 ### Temp / Debug ###
 debug_*.log
 debug_*.py
+debug_*.txt
 test_output*.txt
+test_results*.txt
+prediction_*.txt
+pred_*.txt
+final_test*.txt
 churn_report_temp.pdf
 *.db
 backend/logs/
+
+### Loose draft files ###
+auth_improved.py
+train_model_improved.py
