@@ -1,14 +1,18 @@
 """
 Prediction API v2 - Enhanced with OpenAPI Documentation
 """
+import json
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Any
 from enum import Enum
+from sqlalchemy.orm import Session
 
 from models import CustomerData
 from service_container import get_churn_service
 from auth import User, get_current_user
+from database import get_db
+from db_models import PredictionHistory
 from starlette.requests import Request
 from limiter import limiter
 from logger import logger
@@ -169,7 +173,8 @@ class AnalysisResponse(BaseModel):
 async def predict_churn(
     request: Request,
     data: CustomerData,
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
 ):
     """
     ## Predict Customer Churn
@@ -206,13 +211,28 @@ async def predict_churn(
     try:
         result = service.predict(data.dict())
         logger.info(f"Churn prediction for user {current_user.username}: {result['prediction']} (Score: {result['churn_risk_score']:.4f}) [Model: {result['model_version']}]")
+
+        # A/B 결과 포함하여 예측 이력 DB 저장
+        try:
+            record = PredictionHistory(
+                user_id=current_user.id,
+                churn_probability=result["churn_risk_score"],
+                prediction=result["prediction"],
+                risk_level=result["summary"],
+                suggestions=json.dumps([s if isinstance(s, dict) else s.dict() for s in result["suggestions"]]),
+                model_version=result["model_version"],
+            )
+            db.add(record)
+            db.commit()
+        except Exception as db_err:
+            logger.error(f"Failed to save prediction history: {db_err}")
+            db.rollback()
+
         return result
     except Exception as e:
         logger.error(f"Prediction error: {str(e)}")
-        # If it's already a ChurnException, re-raise it
         if hasattr(e, 'status_code'):
-             raise e
-        # Otherwise wrap in PredictionError for this endpoint
+            raise e
         raise PredictionError(f"Failed to process prediction: {str(e)}")
 
 

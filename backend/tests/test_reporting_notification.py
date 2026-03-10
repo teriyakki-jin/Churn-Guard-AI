@@ -44,11 +44,12 @@ def test_export_pdf(client, db_session):
 @patch("routers.notifications.FastMail")
 def test_send_report_email(mock_fastmail, client, db_session):
     """Test email sending endpoint (mocked)."""
+    from unittest.mock import AsyncMock
     headers = get_auth_headers(client, db_session)
-    
-    # Mock send_message
+
+    # send_message is async — must use AsyncMock so `await fm.send_message()` works
     mock_fm_instance = MagicMock()
-    mock_fm_instance.send_message.return_value = None
+    mock_fm_instance.send_message = AsyncMock(return_value=None)
     mock_fastmail.return_value = mock_fm_instance
     
     payload = {"email": ["test@example.com"]}

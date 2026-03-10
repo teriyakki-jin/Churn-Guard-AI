@@ -46,7 +46,6 @@ async def generate_and_send_report(email_to: List[str]):
 
     try:
         stats = service.get_stats()
-        analysis = service.get_analysis()
 
         pdf = PDFReport()
         pdf.add_page()
@@ -69,9 +68,13 @@ async def generate_and_send_report(email_to: List[str]):
         )
 
         fm = FastMail(conf)
-        await fm.send_message(message)
+        result = fm.send_message(message)
+        # send_message returns a coroutine — await it
+        if hasattr(result, "__await__"):
+            await result
+        logger.info(f"Report email sent to {email_to}")
     except Exception as e:
-        logger.error(f"Error sending report email: {e}")
+        logger.error(f"Error sending report email: {type(e).__name__}: {e}")
     finally:
         if os.path.exists(pdf_file):
             os.remove(pdf_file)
