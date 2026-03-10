@@ -2,6 +2,16 @@
 
 [![CI](https://github.com/teriyakki-jin/Churn-Guard-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/teriyakki-jin/Churn-Guard-AI/actions/workflows/ci.yml)
 
+![Python](https://img.shields.io/badge/Python-3.9-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![scikit--learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikit-learn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-FF6600?logo=xgboost&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?logo=jsonwebtokens&logoColor=white)
+
 통신사 고객 데이터를 기반으로 이탈 위험을 예측하고, 데이터 기반 유지 전략을 제안하는 엔터프라이즈급 웹 애플리케이션입니다.
 
 ## 1. 문제 정의
