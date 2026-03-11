@@ -54,41 +54,8 @@
 
 ## 6. 시스템 아키텍처
 
-```mermaid
-graph TB
-    Client["🌐 Client Browser"]
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/c795e065-b26a-4d42-89e1-6bf87999e974" />
 
-    subgraph Infra["Docker Compose"]
-        Nginx["Nginx · Reverse Proxy :80"]
-
-        subgraph FE["Frontend :5173"]
-            React["React 19 / Vite 7\nRecharts · Framer Motion · Axios"]
-        end
-
-        subgraph BE["Backend :8002  (FastAPI)"]
-            Auth["Auth Router\n/api/token  ·  /api/register\nJWT · bcrypt · 잠금"]
-            Pred["Prediction Router\n/api/predict  ·  /api/stats\n/api/analysis  ·  /api/model-info"]
-            Sim["Simulation Router\nWS /api/ws/simulation\n배치 예측"]
-            Rep["Reports Router\nCSV / PDF  ·  이메일"]
-            AB["A/B Testing\nv2 80%  /  candidate 20%"]
-            ML["Voting Ensemble\nXGBoost×2 · RF · GB\n~84% Acc  ·  AUC 0.88\n~50 피처 엔지니어링"]
-        end
-
-        DB[("SQLite\n(dev)\n────\nPostgreSQL\n(prod)")]
-    end
-
-    Client -->|"HTTP / WebSocket"| Nginx
-    Nginx -->|"/*"| React
-    Nginx -->|"/api/*"| Auth
-    Nginx -->|"/api/*"| Pred
-    Nginx -->|"/api/*"| Sim
-    Nginx -->|"/api/*"| Rep
-    Pred --> AB --> ML
-    Sim --> ML
-    Auth --> DB
-    ML --> DB
-    Rep --> DB
-```
 
 ## 7. 프로젝트 구조
 ```text
