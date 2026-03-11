@@ -52,7 +52,45 @@
 | Infra | Docker, Docker Compose, Nginx |
 | CI/CD | GitHub Actions (pytest, ESLint, Docker build) |
 
-## 6. 프로젝트 구조
+## 6. 시스템 아키텍처
+
+```mermaid
+graph TB
+    Client["🌐 Client Browser"]
+
+    subgraph Infra["Docker Compose"]
+        Nginx["Nginx · Reverse Proxy :80"]
+
+        subgraph FE["Frontend :5173"]
+            React["React 19 / Vite 7\nRecharts · Framer Motion · Axios"]
+        end
+
+        subgraph BE["Backend :8002  (FastAPI)"]
+            Auth["Auth Router\n/api/token  ·  /api/register\nJWT · bcrypt · 잠금"]
+            Pred["Prediction Router\n/api/predict  ·  /api/stats\n/api/analysis  ·  /api/model-info"]
+            Sim["Simulation Router\nWS /api/ws/simulation\n배치 예측"]
+            Rep["Reports Router\nCSV / PDF  ·  이메일"]
+            AB["A/B Testing\nv2 80%  /  candidate 20%"]
+            ML["Voting Ensemble\nXGBoost×2 · RF · GB\n~84% Acc  ·  AUC 0.88\n~50 피처 엔지니어링"]
+        end
+
+        DB[("SQLite\n(dev)\n────\nPostgreSQL\n(prod)")]
+    end
+
+    Client -->|"HTTP / WebSocket"| Nginx
+    Nginx -->|"/*"| React
+    Nginx -->|"/api/*"| Auth
+    Nginx -->|"/api/*"| Pred
+    Nginx -->|"/api/*"| Sim
+    Nginx -->|"/api/*"| Rep
+    Pred --> AB --> ML
+    Sim --> ML
+    Auth --> DB
+    ML --> DB
+    Rep --> DB
+```
+
+## 7. 프로젝트 구조
 ```text
 Churn-Guard-AI/
 ├── backend/
@@ -79,7 +117,7 @@ Churn-Guard-AI/
 └── env.example
 ```
 
-## 7. 실행 방법
+## 8. 실행 방법
 
 ### Docker (권장)
 ```bash
@@ -103,7 +141,7 @@ npm install
 npm run dev
 ```
 
-## 8. 환경 변수
+## 9. 환경 변수
 | 변수 | 설명 | 기본값 |
 |------|------|--------|
 | `SECRET_KEY` | JWT 서명 키 (필수 변경) | - |
@@ -112,7 +150,7 @@ npm run dev
 | `DATABASE_URL` | DB 연결 문자열 | sqlite:///./churn_guard.db |
 | `CORS_ALLOW_ORIGINS` | 허용 출처 (콤마 구분) | http://localhost:5173 |
 
-## 9. API 엔드포인트
+## 10. API 엔드포인트
 | 메서드 | 경로 | 설명 | 제한 |
 |--------|------|------|------|
 | POST | `/api/token` | 로그인 | 5/min |
@@ -126,12 +164,12 @@ npm run dev
 | GET | `/api/reports/export/csv` | CSV 내보내기 | 10/hour |
 | GET | `/api/reports/export/pdf` | PDF 내보내기 | 10/hour |
 
-## 10. 서비스 주소
+## 11. 서비스 주소
 - Frontend: http://localhost:5173
 - Backend API: http://localhost:8002
 - API Docs (Swagger): http://localhost:8002/docs
 
-## 11. 테스트
+## 12. 테스트
 ```bash
 cd backend
 pytest tests/ -v --cov=. --cov-report=term-missing
